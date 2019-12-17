@@ -24,7 +24,7 @@ module.exports = function (sch) {
   }
 
   return sch
-    .replace(/([;,{}()=:[\]<>]|\/\*|\*\/)/g, ' $1 ')
+    .replace(/([;,{}()=:[\]<>]|\/?\/\*|\*\/\/?)/g, ' $1 ')  // 给指定语法的代码 前后加上空格
     .split(/\n/)
     .map(trim)
     .filter(Boolean)
